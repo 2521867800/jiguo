@@ -46,6 +46,28 @@
                 </div>
             </div>
         </div>
+        <!-- 中间 -->
+        <div class="main">
+            <div class="all">
+                <h1>导购清单</h1>
+                <ul>
+                    <li class="k3">最新</li>
+                    <li>最热</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 主体 -->
+        <div class="zhu">
+            <div class="all">
+                <!-- <div>
+                    <img src="./img/back.png" alt="">
+                    <p></p>
+                    <div class="t1"><img src="./img/xin.png" alt="">
+                        <span>+</span><img src="./img/reply.png" alt="">
+                        <span>-</span></div>
+                </div> -->
+            </div>
+        </div>
         <!-- 底部 -->
         <div class="bottom">
             <div class="all">
@@ -106,3 +128,73 @@
 </body>
 
 </html>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template-web.js"></script>
+<script type="text/html" id="tpl">
+    {{each res_hot}}
+    <div class="k2">
+        <img src="{{$value.img}}" alt="">
+        <p>{{$value.text}}</p>
+        <div class="t1">
+            <img src="./img/xin.png" alt="">
+            <span>{{$value.like}}</span>
+            <img src="./img/reply.png" alt="">
+            <span>{{$value.words}}</span>
+        </div>
+    </div>
+    {{/each}} {{each res}}
+    <div class="k1">
+        <img src="{{$value.img}}" alt="">
+        <p>{{$value.text}}</p>
+        <div class="t1">
+            <img src="./img/xin.png" alt="">
+            <span>{{$value.like}}</span>
+            <img src="./img/reply.png" alt="">
+            <span>{{$value.words}}</span>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script>
+    function new_() {
+        $.ajax({
+            type: "get",
+            url: "http://127.0.0.1:3000/guid/new",
+            success: (function(res) {
+
+                const guid = template('tpl', {
+                    res: res
+                })
+                console.log(res);
+                $('.zhu').children('.all').html(guid);
+            })
+        })
+    }
+    new_()
+
+    function new1_() {
+        $.ajax({
+            type: "get",
+            url: "http://127.0.0.1:3000/guid/hot",
+            success: (function(res_hot) {
+
+                const gui = template('tpl', {
+                    res_hot: res_hot
+                })
+                console.log(res_hot);
+                $('.zhu').children('.all').html(gui);
+            })
+        })
+    }
+    new1_();
+    $('.main .all ul li').eq(0).click(function() {
+        $(this).toggleClass('k3').siblings().removeClass('k3');
+        new_()
+
+    })
+    $('.main .all ul li').eq(1).click(function() {
+        $(this).toggleClass('k3').siblings().removeClass('k3');
+
+        new1_();
+    })
+</script>
