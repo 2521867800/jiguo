@@ -1,0 +1,97 @@
+.main {
+    width: 100%;
+    height: 100%;
+    padding: 80px 0;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.main .mid {
+    float: left;
+    border-radius: 15px;
+    width: 800px;
+    padding: 20px 10px 20px;
+    background-color: white;
+}
+
+.main .mid h1 {
+    margin-left: 20px;
+    font-weight: 400;
+}
+
+.main .mid .top {
+    height: 40px;
+    line-height: 30px;
+    padding-left: 10px;
+    margin: 15px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.main .mid .top img {
+    position: relative;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+}
+
+.main .mid .top span {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.main .mid .top p {
+    margin-right: 15px;
+    float: right;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.main .mid p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.main .mid .tu1 {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.main .mid .tu1 img {
+    width: 100%;
+}
+
+.main .mid a {
+    margin-top: 20px;
+    display: block;
+    text-decoration: none;
+    color: #ccc;
+}
+
+.main .lk,
+.main .fx {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    float: left;
+    margin-left: 26px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.main .lk p,
+.main .fx p {
+    font-size: 12px;
+    color: #ccc;
+    position: relative;
+    top: -58px;
+}
+
+.main .lk img,
+.main .fx img {
+    width: 20px;
+    height: 22px;
+}
+
+
+/*# sourceMappingURL=guidx.css.map */

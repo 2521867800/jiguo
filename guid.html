@@ -59,6 +59,7 @@
         <!-- 主体 -->
         <div class="zhu">
             <div class="all">
+
                 <!-- <div>
                     <img src="./img/back.png" alt="">
                     <p></p>
@@ -132,7 +133,7 @@
 <script src="./js/template-web.js"></script>
 <script type="text/html" id="tpl">
     {{each res_hot}}
-    <div class="k2">
+    <a class="k2" href="./useing.html">
         <img src="{{$value.img}}" alt="">
         <p>{{$value.text}}</p>
         <div class="t1">
@@ -141,9 +142,9 @@
             <img src="./img/reply.png" alt="">
             <span>{{$value.words}}</span>
         </div>
-    </div>
+    </a>
     {{/each}} {{each res}}
-    <div class="k1">
+    <a class="k1" href="./useing.html">
         <img src="{{$value.img}}" alt="">
         <p>{{$value.text}}</p>
         <div class="t1">
@@ -152,7 +153,7 @@
             <img src="./img/reply.png" alt="">
             <span>{{$value.words}}</span>
         </div>
-    </div>
+    </a>
     {{/each}}
 </script>
 <script>
