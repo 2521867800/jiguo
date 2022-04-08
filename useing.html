@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/useing.css">
+</head>
+
+<body>
+    <div class="sum">
+        <!-- 头部 -->
+        <div class="top">
+
+            <div class="all">
+                <!-- 左边 -->
+                <div class="left">
+                    <div class="img">
+                        <img src="./img/logonew.png" alt="">
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">首页</a>
+                        </li>
+                        <li>
+                            <a href="#">酷玩</a>
+                        </li>
+                        <li>
+                            <a href="#">导购</a>
+                        </li>
+                        <li>
+                            <a href="#">试用</a>
+                        </li>
+                        <li>
+                            <a href="#">报告</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 右边 -->
+                <div class="right">
+                    <input type="text" placeholder="search">
+                    <a href="#">注册</a>
+                    <a href="#">登录</a>
+                </div>
+            </div>
+        </div>
+        <!-- 中间 -->
+        <div class="main">
+            <div class="all">
+                <h1>免费试用</h1>
+                <ul>
+                    <li class="k3">大众试用</li>
+                    <li>体验师专享</li>
+                </ul>
+                <ul class="qk">
+                    <li class="k3">全部</li>
+                    <li>申请中</li>
+                    <li>使用中</li>
+                    <li>已结束</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 主体 -->
+        <div class="zhu">
+            <div class="all">
+                <!-- <div>
+                    <img src="./img/back.png" alt="">
+                    <p></p>
+                    <div class="t1"><img src="./img/xin.png" alt="">
+                        <span>+</span><img src="./img/reply.png" alt="">
+                        <span>-</span></div>
+                </div> -->
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div class="bottom">
+            <div class="all">
+                <div class="left">
+                    <img src="./img/code.png" alt="">
+                </div>
+                <div class="mid">
+                    <img src="./img/logoImg.jpg" alt="">
+                    <p>全球酷玩试用导购平台酷·新奇·好玩·品质</p>
+                    <p>微信添加“JguoJguo”获取我们的服务。</p>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>免费试用</li>
+                        <li>试用流程</li>
+                        <li>如何提高成功率</li>
+                    </ul>
+                    <ul>
+                        <li>友情链接</li>
+                        <li>智东西</li>
+                        <li>搜狐IT </li>
+                        <li>搜狐数码</li>
+                        <li>凤凰数码 </li>
+                        <li>泡泡网</li>
+                        <li>ZUK社区</li>
+                        <li>极客公园</li>
+                        <li>果库</li>
+                    </ul>
+                    <ul>
+                        <li>WEIBUSI</li>
+                        <li> 腾讯科技</li>
+                        <li>凤凰科技</li>
+                        <li>PConline</li>
+                        <li>3W咖啡</li>
+                        <li>亿觅emie</li>
+                        <li>易迅易启玩</li>
+                    </ul>
+                    <ul>
+                        <li>购买攻略</li>
+                        <li>美亚海淘教程</li>
+                        <li>日亚海淘教程</li>
+                        <li>海淘转运攻略</li>
+                        <li>kickstarter 众筹购买攻略</li>
+                        <li>indiegogo 众筹购买攻略</li>
+                    </ul>
+                    <ul>
+                        <li>厂商合作</li>
+                        <li>关于极果</li>
+                        <li>联系我们</li>
+                        <li>商务合作：BD@jiguo.com</li>
+                        <li>CEO邮箱：CEO@jiguo.com</li>
+                    </ul>
+                    <p>&copy;2016 极果版权所有</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template-web.js"></script>
+<script type="text/html" id="tpl">
+    {{each res}}
+    <div class="k1">
+        <img src="{{$value.img}}" alt="">
+        <h4>{{$value.text}}</h4>
+        <span>{{$value.apply}}</span>
+        <span>{{$value.num}}</span>
+        <p>{{$value.totalnum}}申请</p>
+        <p>{{$value.uName}}</p>
+        <i>{{$value.info_ty}}</i>
+    </div>
+    {{/each}} {{each res_hot}}
+    <div class="k2">
+        <img src="{{$value.img}}" alt="">
+        <h4>{{$value.text}}</h4>
+        <span>{{$value.apply}}</span>
+        <span>{{$value.num}}</span>
+        <p>{{$value.totalnum}}申请</p>
+        <p>{{$value.uName}}</p>
+        <i>{{$value.info_ty}}</i>
+    </div>
+    {{/each}} {{each res2}}
+    <div class="k3">
+        <img src="{{$value.img}}" alt="">
+        <h4>{{$value.text}}</h4>
+        <span>{{$value.apply}}</span>
+        <span>{{$value.num}}</span>
+        <p>{{$value.totalnum}}申请</p>
+        <p>{{$value.uName}}</p>
+        <i>{{$value.info_ty}}</i>
+    </div>
+    {{/each}} {{each res3}}
+    <div class="k4">
+        <img src="{{$value.img}}" alt="">
+        <h4>{{$value.text}}</h4>
+        <span>{{$value.apply}}</span>
+        <span>{{$value.num}}</span>
+        <p>{{$value.totalnum}}申请</p>
+        <p>{{$value.uName}}</p>
+        <i>{{$value.info_ty}}</i>
+    </div>
+    {{/each}} {{each res4}}
+    <div class="k5">
+        <img src="{{$value.img}}" alt="">
+        <h4>{{$value.text}}</h4>
+        <span>{{$value.apply}}</span>
+        <span>{{$value.num}}</span>
+        <p>{{$value.totalnum}}申请</p>
+        <p>{{$value.uName}}</p>
+        <i>{{$value.info_ty}}</i>
+    </div>
+    {{/each}} {{each res5}}
+    <div class="k6">
+        <img src="{{$value.img}}" alt="">
+        <h4>{{$value.text}}</h4>
+        <span>{{$value.apply}}</span>
+        <span>{{$value.num}}</span>
+        <p>{{$value.totalnum}}申请</p>
+        <p>{{$value.uName}}</p>
+        <i>{{$value.info_ty}}</i>
+    </div>
+    {{/each}}
+</script>
+<script>
+    function new_() {
+        $.ajax({
+            type: "get",
+            url: "http://127.0.0.1:3000/useing//public",
+            success: (function(res) {
+
+                const guid = template('tpl', {
+                    res: res
+                })
+                console.log(res);
+                $('.zhu').children('.all').html(guid);
+            })
+        })
+    }
+    // new_()
+
+    function new1_() {
+        $.ajax({
+            type: "get",
+            url: "http://127.0.0.1:3000/useing/master",
+            success: (function(res_hot) {
+
+                const gui = template('tpl', {
+                    res_hot: res_hot
+                })
+                console.log(res_hot);
+                $('.zhu').children('.all').html(gui);
+            })
+        })
+    }
+    new1_();
+
+    // function new2_() {
+    //     $.ajax({
+    //         type: "get",
+    //         url: "http://127.0.0.1:3000/use",
+    //         success: (function(res2) {
+
+    //             const gui = template('tpl', {
+    //                 res2: res2
+    //             })
+    //             console.log(res1);
+    //             $('.zhu').children('.all').html(gui);
+    //         })
+    //     })
+    // }
+
+    // function new3_() {
+    //     $.ajax({
+    //         type: "get",
+    //         url: "http://127.0.0.1:3000/use1",
+    //         success: (function(res3) {
+
+    //             const gui = template('tpl', {
+    //                 res3: res3
+    //             })
+    //             console.log(res3);
+    //             $('.zhu').children('.all').html(gui);
+    //         })
+    //     })
+    // }
+
+    // function new4_() {
+    //     $.ajax({
+    //         type: "get",
+    //         url: "http://127.0.0.1:3000/useing/master",
+    //         success: (function(res4) {
+
+    //             const gui = template('tpl', {
+    //                 res4: res4
+    //             })
+    //             console.log(res4);
+    //             $('.zhu').children('.all').html(gui);
+    //         })
+    //     })
+    // }
+
+    // function new5_() {
+    //     $.ajax({
+    //         type: "get",
+    //         url: "http://127.0.0.1:3000/use",
+    //         success: (function(res5) {
+
+    //             const gui = template('tpl', {
+    //                 res5: res5
+    //             })
+    //             console.log(res5);
+    //             $('.zhu').children('.all').html(gui);
+    //         })
+    //     })
+    // }
+    $('.main .all ul li').eq(0).click(function() {
+        $(this).toggleClass('k3').siblings().removeClass('k3');
+        new1_()
+
+    })
+    $('.main .all ul li').eq(1).click(function() {
+        $(this).toggleClass('k3').siblings().removeClass('k3');
+
+        new_();
+    })
+    $('.qk li').eq(0).click(function() {
+        $(this).toggleClass('k3').siblings().removeClass('k3');
+        new1_()
+
+    })
+    $('.qk li').eq(1).click(function() {
+        $(this).toggleClass('k3').siblings().removeClass('k3');
+        new_()
+
+    })
+    $('.qk li').eq(2).click(function() {
+        $(this).toggleClass('k3').siblings().removeClass('k3');
+        new1_()
+
+    })
+    $('.qk li').eq(3).click(function() {
+        $(this).toggleClass('k3').siblings().removeClass('k3');
+        new_()
+
+    })
+</script>
