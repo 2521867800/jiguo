@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/login.css">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
 </head>
 
 <body>
@@ -23,12 +26,17 @@
                     </div>
                     <ul>
                         <li>
+<<<<<<< HEAD
                             <a href="./page.html">首页</a>
+=======
+                            <a href="#">首页</a>
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
                         </li>
                         <li>
                             <a href="play.html">酷玩</a>
                         </li>
                         <li>
+<<<<<<< HEAD
                             <a href="./guid.html">导购</a>
                         </li>
                         <li>
@@ -36,6 +44,15 @@
                         </li>
                         <li>
                             <a href="./baogao.html">报告</a>
+=======
+                            <a href="#">导购</a>
+                        </li>
+                        <li>
+                            <a href="#">试用</a>
+                        </li>
+                        <li>
+                            <a href="#">报告</a>
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
                         </li>
                     </ul>
                 </div>
@@ -127,6 +144,7 @@
 </body>
 <script src="./js/jquery.min.js"></script>
 <script>
+<<<<<<< HEAD
     $(function() {
         //手机号
         $('input').eq(1).blur(function() {
@@ -190,4 +208,68 @@
     })
 </script>
 
+=======
+   $(function(){
+        //手机号
+       $('input').eq(1).blur(function(){
+           var phone=$('input').eq(1).val();
+           var reg=/^1[3578]\d{9}$/;
+           if(phone==''){
+                $('.phone_msg').text('手机号不能为空');
+           }else if(!reg.test(phone)){
+                $('.phone_msg').text('手机格式不正确');
+           }else{
+                $('.phone_msg').text('输入正确');
+           }
+       })
+         // 验证码
+         var num=60;
+         var timer=null;
+         $('.getyanzheng').click(function(){
+             clearInterval(timer);
+            var that=$(this);
+            timer=setInterval(function(){
+                num--;
+                if(num<=0){
+                    clearInterval(timer);
+                    $(that).text('重新发送');
+                    num=60;
+                }else{
+                    var str="("+num+"秒)后重发"
+                    $(that).text(str);
+                }
+            },1000)
+         }) 
+         //用户名
+         $('input').eq(4).blur(function(){
+             var username=$('input').eq(4).val();
+             var reg=/(\w|[\u4e00-\u9fa5]){4,8}/;
+             if(username==''){
+                 $('.username_msg').text('用户名不能为空');
+             }else if(!reg.test(username)){
+                $('.username_msg').text('用户名格式不正确,必须输入4-8位');
+             }else{
+                $('.username_msg').text('输入正确');
+             }
+         })
+         //密码
+         $('input').eq(5).blur(function(){
+             var pass=$('input').eq(5).val();
+             var reg=/\w{6,12}/;
+             if(pass==''){
+                 $('.pass_msg').text('密码不能为空');
+             }else if(!reg.test(pass)){
+                $('.pass_msg').text('密码格式不正确,必须输入6-12位');
+             }else{
+                $('.pass_msg').text('输入正确');
+             }
+         })
+         $('button').click(function(){
+			if($('.phone_msg').text()=='输入正确'&&$('.imgyz').val()!=''&&$('.numyz').val()!=''&&$('.username_msg').text()=='输入正确'&&$('.pass_msg').text()=='输入正确'){
+                alert('登录成功');
+            } 
+		})
+   })
+</script>
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
 </html>

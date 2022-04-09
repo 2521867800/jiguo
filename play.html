@@ -22,6 +22,7 @@
                     </div>
                     <ul>
                         <li>
+<<<<<<< HEAD
                             <a href="./page.html">首页</a>
                         </li>
                         <li>
@@ -35,6 +36,21 @@
                         </li>
                         <li>
                             <a href="./baogao.html">报告</a>
+=======
+                            <a href="#">首页</a>
+                        </li>
+                        <li>
+                            <a href="#">酷玩</a>
+                        </li>
+                        <li>
+                            <a href="#">导购</a>
+                        </li>
+                        <li>
+                            <a href="#">试用</a>
+                        </li>
+                        <li>
+                            <a href="#">报告</a>
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
                         </li>
                     </ul>
                 </div>
@@ -239,7 +255,11 @@
 </body>
 <script src="./js/jquery.min.js"></script>
 <script type="text/html" id="tpl">
+<<<<<<< HEAD
     <!-- 最新 -->
+=======
+        <!-- 最新 -->
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
     {{each res1}}
     <li>
         <img src="{{$value.img}}">
@@ -268,42 +288,82 @@
             <span>{{$value.words}}</span>
         </div>
     </li>
+<<<<<<< HEAD
     {{/each}} {{each res_life}}
+=======
+    {{/each}}
+    {{each res_life}}
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
     <li>
         <img src="./img/cat_1.png">
         <p>{{$value.productName}}({{$value.nums}})</p>
     </li>
+<<<<<<< HEAD
     {{/each}} {{each res_person}}
+=======
+    {{/each}}
+    {{each res_person}}
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
     <li>
         <img src="./img/cat_2.png">
         <p>{{$value.productName}}({{$value.nums}})</p>
     </li>
+<<<<<<< HEAD
     {{/each}} {{each res_health}}
+=======
+    {{/each}}
+    {{each res_health}}
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
     <li>
         <img src="./img/cat_3.png">
         <p>{{$value.productName}}({{$value.nums}})</p>
     </li>
+<<<<<<< HEAD
     {{/each}} {{each res_cloth}}
+=======
+    {{/each}}
+    {{each res_cloth}}
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
     <li>
         <img src="./img/cat_4.png">
         <p>{{$value.productName}}({{$value.nums}})</p>
     </li>
+<<<<<<< HEAD
     {{/each}} {{each res_go}}
+=======
+    {{/each}}
+    {{each res_go}}
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
     <li>
         <img src="./img/cat_5.png">
         <p>{{$value.productName}}({{$value.nums}})</p>
     </li>
+<<<<<<< HEAD
     {{/each}} {{each res_sport}}
+=======
+    {{/each}}
+    {{each res_sport}}
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
     <li>
         <img src="./img/cat_6.png">
         <p>{{$value.productName}}({{$value.nums}})</p>
     </li>
+<<<<<<< HEAD
     {{/each}} {{each res_photo}}
+=======
+    {{/each}}
+    {{each res_photo}}
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
     <li>
         <img src="./img/cat_7.png">
         <p>{{$value.productName}}({{$value.nums}})</p>
     </li>
+<<<<<<< HEAD
     {{/each}} {{each res_phone}}
+=======
+    {{/each}}
+    {{each res_phone}}
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
     <li>
         <img src="./img/cat_8.png">
         <p>{{$value.productName}}({{$value.nums}})</p>
@@ -315,7 +375,11 @@
         $.ajax({
             type: "get",
             url: "http://127.0.0.1:3000/play/new",
+<<<<<<< HEAD
             success: (function(res) {
+=======
+            success: (function (res) {
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
                 var res1 = []
                 for (var item of res) {
                     for (var i of item) {
@@ -330,12 +394,19 @@
         })
     }
     play_new();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
     function play_hot() {
         $.ajax({
             type: "get",
             url: "http://127.0.0.1:3000/play/hot",
+<<<<<<< HEAD
             success: (function(res) {
+=======
+            success: (function (res) {
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
                 var res2 = []
                 for (var item of res) {
                     for (var i of item) {
@@ -354,6 +425,7 @@
         $.ajax({
             type: "get",
             url: "http://127.0.0.1:3000/play/category",
+<<<<<<< HEAD
             success: (function(res_life) {
                 const kuwan_life = template('tpl', {
                     res_life: res_life[0].list
@@ -386,11 +458,30 @@
                 const kuwan_phone = template('tpl', {
                     res_phone: res_life[1].list
                 })
+=======
+            success: (function (res_life) {
+                const kuwan_life = template('tpl', { res_life: res_life[0].list })
+                $('.life').html(kuwan_life);
+                const kuwan_person = template('tpl', { res_person: res_life[1].list })
+                $('.person').html(kuwan_person);
+                const kuwan_health = template('tpl', { res_health: res_life[2].list })
+                $('.health').html(kuwan_health);
+                const kuwan_cloth = template('tpl', { res_cloth: res_life[3].list })
+                $('.cloth').html(kuwan_cloth);
+                const kuwan_go = template('tpl', { res_go: res_life[4].list })
+                $('.go').html(kuwan_go);
+                const kuwan_sport = template('tpl', { res_sport: res_life[5].list })
+                $('.sport').html(kuwan_sport);
+                const kuwan_photo = template('tpl', { res_photo: res_life[0].list })
+                $('.photo').html(kuwan_photo);
+                const kuwan_phone = template('tpl', { res_phone: res_life[1].list })
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
                 $('.phone').html(kuwan_phone);
             })
         })
     }
     // play_category();
+<<<<<<< HEAD
     $('.new').click(function() {
         $(this).addClass('ts');
         $(this).siblings().removeClass('ts');
@@ -410,6 +501,27 @@
         $(this).siblings().removeClass('ts');
         $('.container').css('display', 'none');
         $('.container_pinlei').css('display', 'block');
+=======
+    $('.new').click(function(){
+        $(this).addClass('ts');
+        $(this).siblings().removeClass('ts');
+        $('.container').css('display','block');
+        $('.container_pinlei').css('display','none');
+        play_new();
+    })
+    $('.hot').click(function(){
+        $(this).addClass('ts');
+        $(this).siblings().removeClass('ts');
+        $('.container').css('display','block');
+        $('.container_pinlei').css('display','none');
+        play_hot();
+    })
+    $('.lei').click(function(){
+        $(this).addClass('ts');
+        $(this).siblings().removeClass('ts');
+        $('.container').css('display','none');
+        $('.container_pinlei').css('display','block');
+>>>>>>> 8d1e2b3ecf857dafa6296837d28408d4b68af1a4
         play_category();
     })
 </script>
