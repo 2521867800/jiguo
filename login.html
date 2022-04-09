@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/guid.css">
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
@@ -41,39 +41,36 @@
                 <!-- 右边 -->
                 <div class="right">
                     <input type="text" placeholder="search">
-                    <a href="#">注册</a>
-                    <a href="#">登录</a>
+                    <a href="regist.html">注册</a>
+                    <a href="login.html">登录</a>
                 </div>
             </div>
         </div>
-        <!-- 中间 -->
-        <div class="main">
+        <div class="contant">
             <div class="all">
-                <h1>导购清单</h1>
-                <ul>
-                    <li class="k3">最新</li>
-                    <li>最热</li>
-                </ul>
-            </div>
-        </div>
-        <!-- 主体 -->
-        <div class="zhu">
-            <div class="all">
-
-                <!-- <div>
-                    <img src="./img/back.png" alt="">
-                    <p></p>
-                    <div class="t1"><img src="./img/xin.png" alt="">
-                        <span>+</span><img src="./img/reply.png" alt="">
-                        <span>-</span></div>
-                </div> -->
+                <div class="subcontant">
+                    <div class="redfangkuai"></div>
+                    <span>登录极果</span>
+                    <div class="regist">
+                        <input type="text" placeholder="请输入登录手机号"><span class="phone_msg"></span><br>
+                        <input type="text" placeholder="请输入图片校验码" class="imgyz">
+                        <div class="imgyanzzheng">
+                            <img src="./img/imgCode.jpg">
+                        </div>
+                        <input type="text" placeholder="请输入4位数字验证码" class="numyz">
+                        <div class="getyanzheng">获取验证码</div>
+                        <input type="text" placeholder="请输入用户名"><span class="username_msg"></span>
+                        <input type="password" placeholder="请输入密码"><span class="pass_msg"></span>
+                        <button href="#">立即登录</button>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- 底部 -->
         <div class="bottom">
             <div class="all">
                 <div class="left">
-                    <img src="./img/code.png" alt="">
+                    <img src="./" alt="">
                 </div>
                 <div class="mid">
                     <img src="./img/logoImg.jpg" alt="">
@@ -127,75 +124,69 @@
         </div>
     </div>
 </body>
+<script src="./js/jquery.min.js"></script>
+<script>
+    $(function() {
+        //手机号
+        $('input').eq(1).blur(function() {
+                var phone = $('input').eq(1).val();
+                var reg = /^1[3578]\d{9}$/;
+                if (phone == '') {
+                    $('.phone_msg').text('手机号不能为空');
+                } else if (!reg.test(phone)) {
+                    $('.phone_msg').text('手机格式不正确');
+                } else {
+                    $('.phone_msg').text('输入正确');
+                }
+            })
+            // 验证码
+        var num = 60;
+        var timer = null;
+        $('.getyanzheng').click(function() {
+                clearInterval(timer);
+                var that = $(this);
+                timer = setInterval(function() {
+                    num--;
+                    if (num <= 0) {
+                        clearInterval(timer);
+                        $(that).text('重新发送');
+                        num = 60;
+                    } else {
+                        var str = "(" + num + "秒)后重发"
+                        $(that).text(str);
+                    }
+                }, 1000)
+            })
+            //用户名
+        $('input').eq(4).blur(function() {
+                var username = $('input').eq(4).val();
+                var reg = /(\w|[\u4e00-\u9fa5]){4,8}/;
+                if (username == '') {
+                    $('.username_msg').text('用户名不能为空');
+                } else if (!reg.test(username)) {
+                    $('.username_msg').text('用户名格式不正确,必须输入4-8位');
+                } else {
+                    $('.username_msg').text('输入正确');
+                }
+            })
+            //密码
+        $('input').eq(5).blur(function() {
+            var pass = $('input').eq(5).val();
+            var reg = /\w{6,12}/;
+            if (pass == '') {
+                $('.pass_msg').text('密码不能为空');
+            } else if (!reg.test(pass)) {
+                $('.pass_msg').text('密码格式不正确,必须输入6-12位');
+            } else {
+                $('.pass_msg').text('输入正确');
+            }
+        })
+        $('button').click(function() {
+            if ($('.phone_msg').text() == '输入正确' && $('.imgyz').val() != '' && $('.numyz').val() != '' && $('.username_msg').text() == '输入正确' && $('.pass_msg').text() == '输入正确') {
+                alert('登录成功');
+            }
+        })
+    })
+</script>
 
 </html>
-<script src="./js/jquery.min.js"></script>
-<script src="./js/template-web.js"></script>
-<script type="text/html" id="tpl">
-    {{each res_hot}}
-    <a class="k2" href="./guidx.html">
-        <img src="{{$value.img}}" alt="">
-        <p>{{$value.text}}</p>
-        <div class="t1">
-            <img src="./img/xin.png" alt="">
-            <span>{{$value.like}}</span>
-            <img src="./img/reply.png" alt="">
-            <span>{{$value.words}}</span>
-        </div>
-    </a>
-    {{/each}} {{each res}}
-    <a class="k1" href="./guidx.html">
-        <img src="{{$value.img}}" alt="">
-        <p>{{$value.text}}</p>
-        <div class="t1">
-            <img src="./img/xin.png" alt="">
-            <span>{{$value.like}}</span>
-            <img src="./img/reply.png" alt="">
-            <span>{{$value.words}}</span>
-        </div>
-    </a>
-    {{/each}}
-</script>
-<script>
-    function new_() {
-        $.ajax({
-            type: "get",
-            url: "http://127.0.0.1:3000/guid/new",
-            success: (function(res) {
-
-                const guid = template('tpl', {
-                    res: res
-                })
-                console.log(res);
-                $('.zhu').children('.all').html(guid);
-            })
-        })
-    }
-    new_()
-
-    function new1_() {
-        $.ajax({
-            type: "get",
-            url: "http://127.0.0.1:3000/guid/hot",
-            success: (function(res_hot) {
-
-                const gui = template('tpl', {
-                    res_hot: res_hot
-                })
-                console.log(res_hot);
-                $('.zhu').children('.all').html(gui);
-            })
-        })
-    }
-    new1_();
-    $('.main .all ul li').eq(0).click(function() {
-        $(this).toggleClass('k3').siblings().removeClass('k3');
-        new_()
-
-    })
-    $('.main .all ul li').eq(1).click(function() {
-        $(this).toggleClass('k3').siblings().removeClass('k3');
-
-        new1_();
-    })
-</script>

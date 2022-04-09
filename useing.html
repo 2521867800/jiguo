@@ -22,19 +22,19 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="#">首页</a>
+                            <a href="./page.html">首页</a>
                         </li>
                         <li>
-                            <a href="#">酷玩</a>
+                            <a href="play.html">酷玩</a>
                         </li>
                         <li>
-                            <a href="#">导购</a>
+                            <a href="./guid.html">导购</a>
                         </li>
                         <li>
-                            <a href="#">试用</a>
+                            <a href="./useing.html">试用</a>
                         </li>
                         <li>
-                            <a href="#">报告</a>
+                            <a href="./baogao.html">报告</a>
                         </li>
                     </ul>
                 </div>
@@ -138,7 +138,7 @@
 <script src="./js/template-web.js"></script>
 <script type="text/html" id="tpl">
     {{each res}}
-    <div class="k1">
+    <a class="k1" href="./useingx.html">
         <img src="{{$value.img}}" alt="">
         <h4>{{$value.text}}</h4>
         <span>{{$value.apply}}</span>
@@ -146,9 +146,9 @@
         <p>{{$value.totalnum}}申请</p>
         <p>{{$value.uName}}</p>
         <i>{{$value.info_ty}}</i>
-    </div>
+    </a>
     {{/each}} {{each res_hot}}
-    <div class="k2">
+    <a class="k2" href="./useingx.html">
         <img src="{{$value.img}}" alt="">
         <h4>{{$value.text}}</h4>
         <span>{{$value.apply}}</span>
@@ -156,9 +156,9 @@
         <p>{{$value.totalnum}}申请</p>
         <p>{{$value.uName}}</p>
         <i>{{$value.info_ty}}</i>
-    </div>
+    </a>
     {{/each}} {{each res2}}
-    <div class="k3">
+    <a class="k3" href="./useingx.html">
         <img src="{{$value.img}}" alt="">
         <h4>{{$value.text}}</h4>
         <span>{{$value.apply}}</span>
@@ -166,9 +166,9 @@
         <p>{{$value.totalnum}}申请</p>
         <p>{{$value.uName}}</p>
         <i>{{$value.info_ty}}</i>
-    </div>
+    </a>
     {{/each}} {{each res3}}
-    <div class="k4">
+    <a class="k4" href="./useingx.html">
         <img src="{{$value.img}}" alt="">
         <h4>{{$value.text}}</h4>
         <span>{{$value.apply}}</span>
@@ -176,9 +176,9 @@
         <p>{{$value.totalnum}}申请</p>
         <p>{{$value.uName}}</p>
         <i>{{$value.info_ty}}</i>
-    </div>
+    </a>
     {{/each}} {{each res4}}
-    <div class="k5">
+    <a class="k5" href="./useingx.html">
         <img src="{{$value.img}}" alt="">
         <h4>{{$value.text}}</h4>
         <span>{{$value.apply}}</span>
@@ -186,9 +186,9 @@
         <p>{{$value.totalnum}}申请</p>
         <p>{{$value.uName}}</p>
         <i>{{$value.info_ty}}</i>
-    </div>
+    </a>
     {{/each}} {{each res5}}
-    <div class="k6">
+    <a class="k6" href="./useingx.html">
         <img src="{{$value.img}}" alt="">
         <h4>{{$value.text}}</h4>
         <span>{{$value.apply}}</span>
@@ -196,7 +196,7 @@
         <p>{{$value.totalnum}}申请</p>
         <p>{{$value.uName}}</p>
         <i>{{$value.info_ty}}</i>
-    </div>
+    </a>
     {{/each}}
 </script>
 <script>

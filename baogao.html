@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/guid.css">
+    <link rel="stylesheet" href="./css/baogao.css">
 </head>
 
 <body>
@@ -49,7 +50,7 @@
         <!-- 中间 -->
         <div class="main">
             <div class="all">
-                <h1>导购清单</h1>
+                <h1>体验报告</h1>
                 <ul>
                     <li class="k3">最新</li>
                     <li>最热</li>
@@ -57,16 +58,26 @@
             </div>
         </div>
         <!-- 主体 -->
-        <div class="zhu">
+        <div class="bd">
             <div class="all">
+                <div class="left">
 
-                <!-- <div>
-                    <img src="./img/back.png" alt="">
-                    <p></p>
-                    <div class="t1"><img src="./img/xin.png" alt="">
-                        <span>+</span><img src="./img/reply.png" alt="">
-                        <span>-</span></div>
-                </div> -->
+
+                </div>
+                <div class="right">
+                    <h3>购买渠道</h3>
+                    <p>￥499</p>
+                    <span>点击购买</span>
+                    <p>来自官网</p>
+                    <h3>极果体验师</h3>
+                    <img src="./img/tiyanImg.jpg" alt="">
+                    <p>第一时间体验新品,大众试用优先通过，还有定向邀请试用，新品玩到手软！</p>
+                    <h4>要求</h4>
+                    <p>是某个领域的大神玩家，在社交网络或圈子里有大有影响力，善写作会拍摄</p>
+                    <h4>申请</h4>
+                    <p>1.关注极果公众号：jgojgo</p>
+                    <p>2.在公众号内回复，体验师</p>
+                </div>
             </div>
         </div>
         <!-- 底部 -->
@@ -125,6 +136,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </body>
 
@@ -132,42 +144,56 @@
 <script src="./js/jquery.min.js"></script>
 <script src="./js/template-web.js"></script>
 <script type="text/html" id="tpl">
-    {{each res_hot}}
-    <a class="k2" href="./guidx.html">
+    {{each res}}
+    <div class="y1">
         <img src="{{$value.img}}" alt="">
         <p>{{$value.text}}</p>
-        <div class="t1">
-            <img src="./img/xin.png" alt="">
-            <span>{{$value.like}}</span>
-            <img src="./img/reply.png" alt="">
-            <span>{{$value.words}}</span>
+        <div class="bottom">
+            <img src="./img/tx.jpg" alt="">
+            <span>{{$value.endTime}}</span>
+            <div class="zan">
+                <img src="./img/zan.png" alt="">
+                <span>5</span>
+                <img src="./img/reply.png" alt="">
+                <span>6</span>
+            </div>
         </div>
-    </a>
-    {{/each}} {{each res}}
-    <a class="k1" href="./guidx.html">
+    </div>
+    <div class="tx">
+        {{$value.uName}}
+    </div>
+    {{/each}} {{each res1}}
+    <div class="y2">
         <img src="{{$value.img}}" alt="">
         <p>{{$value.text}}</p>
-        <div class="t1">
-            <img src="./img/xin.png" alt="">
-            <span>{{$value.like}}</span>
-            <img src="./img/reply.png" alt="">
-            <span>{{$value.words}}</span>
+        <div class="bottom">
+            <img src="./img/tx.jpg" alt="">
+            <span>{{$value.endTime}}</span>
+            <div class="zan">
+                <img src="./img/zan.png" alt="">
+                <span>5</span>
+                <img src="./img/reply.png" alt="">
+                <span>6</span>
+            </div>
         </div>
-    </a>
+    </div>
+    <div class="tx1">
+        {{$value.uName}}
+    </div>
     {{/each}}
 </script>
 <script>
     function new_() {
         $.ajax({
             type: "get",
-            url: "http://127.0.0.1:3000/guid/new",
+            url: "http://127.0.0.1:3000/report/new",
             success: (function(res) {
 
                 const guid = template('tpl', {
                     res: res
                 })
                 console.log(res);
-                $('.zhu').children('.all').html(guid);
+                $('.bd .left').html(guid);
             })
         })
     }
@@ -176,18 +202,17 @@
     function new1_() {
         $.ajax({
             type: "get",
-            url: "http://127.0.0.1:3000/guid/hot",
-            success: (function(res_hot) {
+            url: "http://127.0.0.1:3000/report/hot",
+            success: (function(res1) {
 
-                const gui = template('tpl', {
-                    res_hot: res_hot
+                const guid = template('tpl', {
+                    res1: res1
                 })
-                console.log(res_hot);
-                $('.zhu').children('.all').html(gui);
+                console.log(res1);
+                $('.bd .left').html(guid);
             })
         })
     }
-    new1_();
     $('.main .all ul li').eq(0).click(function() {
         $(this).toggleClass('k3').siblings().removeClass('k3');
         new_()
@@ -195,7 +220,7 @@
     })
     $('.main .all ul li').eq(1).click(function() {
         $(this).toggleClass('k3').siblings().removeClass('k3');
+        new1_()
 
-        new1_();
     })
 </script>
