@@ -24,7 +24,7 @@ $(function() {
     function daogao() {
         $.ajax({
             type: 'get',
-            url: "http://172.0.0.1:3000/guid/new",
+            url: "http://127.0.0.1:3000/guid/new",
             success: (function(res) {
 
                 var path_new = template('tpi', {
@@ -60,7 +60,7 @@ $(function() {
         var nowtime = new Date();
         var gotime = new Date(2022, 4, 1);
         var time = gotime - nowtime; //时间差
-        console.log(time);
+
         var year = Math.floor(time / 1000 / 60 / 60 / 24);
         year = year < 10 ? '0' + year : year;
         var h = Math.floor(time / 1000 / 60 / 60 % 24);

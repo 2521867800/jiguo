@@ -1,0 +1,107 @@
+.main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bd {
+    height: 100%;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    .left {
+        width: 651px;
+        float: left;
+        .y1,
+        .y2 {
+            margin-top: 30px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%;
+            background-color: white;
+            p {
+                margin-top: 10px;
+                text-indent: 3rem;
+                position: absolute;
+                bottom: 23%;
+                z-index: 1;
+                opacity: .7;
+            }
+            img {
+                width: 100%;
+            }
+            .bottom {
+                opacity: .7;
+                position: absolute;
+                bottom: 1%;
+                background-color: white;
+                width: 100%;
+                height: 119px;
+                color: #888;
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+                .zan {
+                    float: right;
+                    margin-right: 29px;
+                    color: #888;
+                }
+            }
+        }
+        .tx,
+        .tx1 {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            color: #888;
+            border: 1px solid #ccc;
+            line-height: 40px;
+            position: relative;
+            margin-top: 10px;
+        }
+    }
+    .right {
+        float: left;
+        width: 270px;
+        margin-left: 20px;
+        h3 {
+            font-size: 20px;
+            color: black;
+            font-weight: normal
+        }
+        p:nth-of-type(1) {
+            font-size: 50px;
+            color: red;
+        }
+        p:nth-of-type(3) {
+            font-size: 12px;
+            color: #888;
+        }
+        p:nth-of-type(4) {
+            font-size: 12px;
+            color: #888;
+        }
+        p:nth-of-type(5) {
+            font-size: 12px;
+            color: #888;
+        }
+        p:nth-of-type(6) {
+            font-size: 12px;
+            color: #888;
+        }
+        span {
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            font-size: 16px;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 50px;
+            background-color: red;
+        }
+    }
+}
